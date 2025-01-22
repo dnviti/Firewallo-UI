@@ -1,6 +1,6 @@
 # core/rbac.py
 from fastapi import Depends, HTTPException, status
-from src.apps.core.utils import get_current_user
+from apps.core.utils import get_current_user
 
 def has_role(required_role: str):
     async def role_checker(current_user: dict = Depends(get_current_user)):

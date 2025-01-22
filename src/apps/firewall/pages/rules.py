@@ -3,7 +3,7 @@ from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
 
 router = APIRouter()
-templates = Jinja2Templates(directory="firewall/templates")
+templates = Jinja2Templates(directory="apps/firewall/templates")
 
 @router.get("/firewall/rules")
 async def rules_list(request: Request):

@@ -2,16 +2,16 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
-from src.apps.core import auth, users, api_keys, plugin_loader
+from apps.core import auth, users, api_keys, plugin_loader
 from starlette.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key='your-secret-key')
 
-app.mount("/static", StaticFiles(directory="src/apps/core/static"), name="static")
+app.mount("/static", StaticFiles(directory="apps/core/static"), name="static")
 
-templates = Jinja2Templates(directory="src/apps/core/templates")
+templates = Jinja2Templates(directory="apps/core/templates")
 
 # Include core routers
 app.include_router(auth.router)
