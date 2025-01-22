@@ -1,9 +1,9 @@
 # core/auth.py
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Depends
 from authlib.integrations.starlette_client import OAuth
 from starlette.config import Config
 from starlette.responses import RedirectResponse
-from core.utils import get_current_user
+from src.apps.core.utils import get_current_user
 
 router = APIRouter()
 config = Config('.env')

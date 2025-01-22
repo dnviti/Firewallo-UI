@@ -2,7 +2,7 @@
 import os
 import yaml
 import importlib.util
-from core.certificates import verify_signature
+from src.apps.core.certificates import verify_signature
 
 def load_plugins(app):
     plugins_dir = os.path.join(os.path.dirname(__file__))

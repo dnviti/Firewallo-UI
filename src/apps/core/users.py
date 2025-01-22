@@ -1,6 +1,6 @@
 # core/users.py
 from fastapi import APIRouter, Depends
-from core.rbac import has_role
+from src.apps.core.rbac import has_role
 
 router = APIRouter()
 
