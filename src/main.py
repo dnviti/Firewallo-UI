@@ -1,4 +1,5 @@
 # main.py
+import os
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
@@ -7,7 +8,7 @@ from starlette.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
-app.add_middleware(SessionMiddleware, secret_key='your-secret-key')
+app.add_middleware(SessionMiddleware, secret_key=os.getenv("SECRET_KEY"))
 
 app.mount("/static", StaticFiles(directory="apps/core/static"), name="static")
 
