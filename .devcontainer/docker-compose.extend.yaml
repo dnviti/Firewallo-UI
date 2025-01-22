@@ -1,0 +1,10 @@
+services:
+  firewallo-ui:
+    image: python:slim
+    container_name: firewallo-ui
+    volumes:
+      - ./.devcontainer/shared:/shared
+    command: ["sleep", "infinity"]
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile

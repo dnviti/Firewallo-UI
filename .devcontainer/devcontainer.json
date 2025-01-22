@@ -1,0 +1,39 @@
+{
+    "name": "Firewallo UI Dev Container",
+    "dockerComposeFile": [
+      "../docker-compose.yaml",
+      "docker-compose.extend.yaml"
+    ],
+    "service": "firewallo-ui",
+    "workspaceFolder": "/app",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "python.defaultInterpreterPath": "/usr/local/bin/python",
+          "files.autoSave": "afterDelay"
+        },
+        "extensions": [
+          "ms-python.python",
+          "ms-python.debugpy",
+          "ms-python.vscode-pylance",
+          "ms-python.isort",
+          "ms-python.pylint",
+          "esbenp.prettier-vscode",
+          "zhuangtongfa.material-theme",
+          "pkief.material-icon-theme",
+          "christian-kohler.path-intellisense",
+          "ms-python.autopep8",
+          "kennylong.kubernetes-yaml-formatter",
+          "batisteo.vscode-django",
+          "mhutchie.git-graph",
+          "github.vscode-pull-request-github",
+          "redhat.vscode-yaml",
+          "qwtel.sqlite-viewer",
+          "njpwerner.autodocstring",
+          "kevinrose.vsc-python-indent",
+          "wholroyd.jinja",
+          "buianhthang.gitflow"
+        ]
+      }
+    }
+  }

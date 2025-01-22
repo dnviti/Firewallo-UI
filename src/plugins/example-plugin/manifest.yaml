@@ -1,0 +1,13 @@
+name: Example Plugin
+author: Jane Doe
+creation_date: 2023-10-20
+git_repo: https://github.com/janedoe/example_plugin
+pages:
+  - name: Example Page
+    endpoint: /example
+    template: page1.html
+    inputs:
+      - type: text
+        name: input1
+        label: "Input 1"
+signature: "deadbeef..."  # Hexadecimal signature of the manifest file content

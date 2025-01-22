@@ -1,0 +1,11 @@
+<!-- plugins/example_plugin/templates/page1.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Example Plugin Page</h1>
+<form method="post">
+    <label for="input1">Input 1:</label>
+    <input type="text" name="input1" id="input1">
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

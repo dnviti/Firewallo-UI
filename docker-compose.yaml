@@ -1,0 +1,4 @@
+services:
+  firewallo-ui:
+    image: python:slim
+    container_name: firewallo-ui
