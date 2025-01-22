@@ -1,5 +1,5 @@
 # main.py
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 from src.apps.core import auth, users, api_keys, plugin_loader
@@ -11,7 +11,7 @@ app.add_middleware(SessionMiddleware, secret_key='your-secret-key')
 
 app.mount("/static", StaticFiles(directory="src/apps/core/static"), name="static")
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="src/apps/core/templates")
 
 # Include core routers
 app.include_router(auth.router)
@@ -26,7 +26,7 @@ async def root():
     return RedirectResponse(url="/dashboard")
 
 @app.get("/dashboard")
-async def dashboard(request):
+async def dashboard(request: Request):
     # Dynamically generate navigation based on loaded plugins
     navigation = [{"name": "Home", "url": "/dashboard"}]
     # You can enhance this to read from plugin manifests
